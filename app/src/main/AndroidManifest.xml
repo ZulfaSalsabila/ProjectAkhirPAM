@@ -2,33 +2,48 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.aplikasilaundry">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Aplikasilaundry">
+        android:theme="@style/Theme.Aplikasilaundry"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".LoginActivity"
-            android:exported="true"/>
-
+            android:name=".ViewPakaian"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
-            android:name=".SepraiActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Register"
+            android:exported="false" />
         <activity
-            android:name=".PakaianSepraiActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".PakaianActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".LoginDatactivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".SepraiActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PakaianSepraiActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PakaianActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
 
         </activity>
     </application>
